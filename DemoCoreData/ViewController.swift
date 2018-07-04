@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.gray
         // Do any additional setup after loading the view, typically from a nib.
         guard let entity = try? AppDelegate.context.fetch(Entity.fetchRequest()) as? [Entity] else { return  }
-        textField.text = entity?.last?.name
+        textField.text = entity?[0].name
     }
 
     @IBAction func ButtonTap(_ sender: UIButton) {
